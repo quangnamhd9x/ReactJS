@@ -1,11 +1,9 @@
 import "./App.css";
-import YoutubeList from "./components/youtube/YoutubeList";
+import Toggle from "./components/state/Toggle";
 function App() {
   return (
     <div>
-      <YoutubeList>
-        <h2>Chào các bạn</h2>
-      </YoutubeList>
+      <Toggle></Toggle>
     </div>
   );
 }
