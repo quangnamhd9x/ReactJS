@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Cell = ({value, onClick}) => {  // object distructuring thay cho props
+const Cell = ({value, onClick, className}) => {  // object distructuring thay cho props
     return (
-        <div className='game-cell' onClick={onClick}>
+        <div className={`game-cell ${className}`} onClick={onClick}>
             {value}
         </div>
     );
