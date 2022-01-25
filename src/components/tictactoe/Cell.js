@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Cell = (props) => {
+const Cell = ({value, onClick}) => {  // object distructuring thay cho props
     return (
-        <div className='game-cell' onClick={props.onClick}>
-            {props.value}
+        <div className='game-cell' onClick={onClick}>
+            {value}
         </div>
     );
 };
