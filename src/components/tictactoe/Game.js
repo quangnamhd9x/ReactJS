@@ -4,7 +4,7 @@ import Board from "./Board";
 import "./GameStyles.css";
 
 const Game = () => {
-  const [board, setBoard] = useState(Array(9).fill(null));
+  const [board, setBoard] = useState(Array(100).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
   const winner = calulateWinner(board);
   const handleClick = (index) => {
@@ -16,7 +16,7 @@ const Game = () => {
   };
 
   const handleResetGame = () => {
-    setBoard(Array(9).fill(null)); // if you want orther player win start game
+    setBoard(Array(100).fill(null)); // if you want orther player win start game
     //setXIsNext(true);    // if you want set alaway first X
   };
 

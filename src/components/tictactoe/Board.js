@@ -4,7 +4,7 @@ import Cell from "./Cell";
 
 const Board = (props) => {
   console.log(props);
-  const cells = [null, null, null, "X", "X", "X", null, null, null];
+  const cells = [null, null, null, null, null, "X", "X", "X", "X", "X", null, null, null, null, null];
   console.log(calulateWinner(cells));
   return (
     <div className="game-board">
