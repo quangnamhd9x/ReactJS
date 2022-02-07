@@ -1,4 +1,5 @@
 import "./App.css";
+import DoubleCount from "./components/counter/DoubleCount";
 import Board from "./components/tictactoe/Board";
 import Game from "./components/tictactoe/Game";
 import Users from "./components/users/Users";
@@ -9,7 +10,10 @@ function App() {
   return (
     <div>
       <div>
-        <Game></Game>
+        <DoubleCount>
+        <h1>Children</h1>
+          {/* Children: html, component, text, variable*/}
+        </DoubleCount>
       </div>
     </div>
   );
