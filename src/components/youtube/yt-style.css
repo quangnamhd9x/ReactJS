@@ -1,0 +1,36 @@
+.yt-main {
+    display: flex;
+}
+
+.yt-sidebar {
+    flex: 1 1 25%;
+    padding: 50px 50px;
+    border: 1px solid #ccc;
+    background-color: #212121;
+    color: #ffffff;
+}
+
+.yt-sidebar button {
+    cursor: pointer;
+    line-height: 1.5;
+    margin-left: 10px;
+    font-size: medium;
+    font-weight: 400;
+    background: none;
+    border: none;
+    color: snow;
+}
+
+.yt-sidebar button:hover {
+    font-size: 20px;
+    transition: 0.2s;
+    color: #aaa
+}
+
+.yt-sidebar button:active {
+    color: #6272a4
+}
+
+.youtube-list {
+    flex: 1 1 75%;
+}

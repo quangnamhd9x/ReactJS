@@ -53,7 +53,7 @@ class User extends React.Component {
     const indexOfFirstUser = indexOfLastUser - usersPerPage;  // first index user in list
     const currentTodos = dataUser.slice(indexOfFirstUser, indexOfLastUser);  // slice arr index first to last
     console.log(currentTodos); 
-    const renderTodos = currentTodos.map((todo, index) => {
+    const renderTodos = currentTodos.map((todo, index) => {   //tạo biến in dữ liệu ra dạng html
       return (
         <div className="item-user">
           <h2>{todo.first_name}</h2>
