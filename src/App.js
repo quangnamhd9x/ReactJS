@@ -14,6 +14,7 @@ const theme = {
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
       <GlobalStyles></GlobalStyles>
       <CardList>
         <Card2 secondary={true}></Card2>
