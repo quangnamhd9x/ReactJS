@@ -1,13 +1,13 @@
 import "./App.css";
-import CardList from "./components/card/CardList";
-import CardTailwind from "./components/card/CardTailwind";
+import "./components/youtube/yt-style.scss"
+import YoutubeSideBar from "./components/youtube/YoutubeSideBar";
+import YoutubeList from "./components/youtube/YoutubeList";
 
 function App() {
   return (
-    <div>
-      <CardList>
-        <CardTailwind primary={true} fontSize="text-2xl"></CardTailwind>
-      </CardList>
+    <div className="youtube-main">
+      <YoutubeSideBar></YoutubeSideBar>
+      <YoutubeList></YoutubeList>
     </div>
   );
 }

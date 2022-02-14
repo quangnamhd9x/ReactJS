@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const YoutubeCategory = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+const YoutubeCategory = ({ value, onClick }) => {
+  return <p onClick={onClick}>{value}</p>;
 };
 
 export default YoutubeCategory;

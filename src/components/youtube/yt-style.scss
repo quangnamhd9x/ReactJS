@@ -1,0 +1,15 @@
+.youtube-main {
+    display: flex;
+}
+
+.youtube-list {
+    flex: 1 1 75%;
+}
+
+.youtube-side-bar {
+    flex: 1 1 25%;
+    background: #212121;
+    h1, li {
+        color: aliceblue;
+    }
+}

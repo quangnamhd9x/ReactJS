@@ -1,32 +1,31 @@
 import React from "react";
 import { YoutubeDataCategory } from "./YoutubeDataCategory";
 
-class YoutubeSideBar extends React.Component {
-  select = (event) => {
-    // get by number user per page
-    this.setState({
-      usersPerPage: event.target.value,
-    });
-  };
-
-  render() {
-    const Data = YoutubeDataCategory.map((item, index) => {
-      <div>
-        <h2>Danh mục</h2>
-        <select defaultValue="0" onChange={this.select}>
-          <option value="0" disabled>
-            Get by
-          </option>
-          <option value={item.id}>{item.category}</option>
-        </select>
-      </div>;
-    });
-    return (
-      <div>
-        <div>{Data}</div>
+const YoutubeSideBar = () => {
+  return (
+    <div className="youtube-side-bar">
+      <div className="fixed">
+        <h1 className="text-lg p-5">Danh mục</h1>
+        <hr />
+        {YoutubeDataCategory.map((item, index) => {
+          return (
+            <ul className="ml-5">
+              <li onClick={getIdCategory}>
+                <button id="button" value={item.id}>
+                  {item.category}
+                  {console.log(item.id)}
+                </button>
+              </li>
+            </ul>
+          );
+        })}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+const getIdCategory = () => {
+  console.log(document.getElementById("button").getAttribute("value"));
+};
 
 export default YoutubeSideBar;
