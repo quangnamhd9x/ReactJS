@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const getRandomPhotos = (page) => {
-  return axios
-    .get(`https://picsum.photos/v2/list?page=${page}&limit=8`)
-    .then((response) => {
-      return response.data;
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+const getRandomPhotos = async (page) => {
+  try {
+    const response = await axios.get(
+      `https://picsum.photos/v2/list?page=${page}&limit=8`
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const Photo = () => {
   const [randomPhotos, setRandomPhotos] = useState([]);
   const [nextPage, setNextPage] = useState(1);
 
-  const handleLoadMotePhotos = () => {
-    getRandomPhotos(nextPage).then((images) => {
+  const handleLoadMorePhotos = async () => {
+    const images = await getRandomPhotos(nextPage).then((images) => {
       const newPhotos = [...randomPhotos, ...images];
       console.log(images);
       setRandomPhotos(newPhotos);
@@ -25,7 +25,7 @@ const Photo = () => {
     });
   };
   useEffect(() => {
-    handleLoadMotePhotos();
+    handleLoadMorePhotos();
   }, []);
   return (
     <div>
@@ -43,7 +43,7 @@ const Photo = () => {
       </div>
       <div className="text-center">
         <button
-          onClick={handleLoadMotePhotos}
+          onClick={handleLoadMorePhotos}
           className="inline-block px-8 py-4 bg-purple-600 text-white"
         >
           Load More

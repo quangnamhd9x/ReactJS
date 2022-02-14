@@ -1,11 +1,11 @@
 import "./App.css";
-import "./components/youtube/yt-style.scss"
-import Photo from "./components/photo/Photo";
+import "./components/youtube/yt-style.scss";
+import Photos from "./components/photo/Photos";
 
 function App() {
   return (
     <div>
-      <Photo></Photo>
+      <Photos></Photos>
     </div>
   );
 }
