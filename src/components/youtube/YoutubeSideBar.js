@@ -1,31 +1,31 @@
 import React from "react";
 import { YoutubeDataCategory } from "./YoutubeDataCategory";
 
-const YoutubeSideBar = () => {
+const YoutubeSideBar = (props) => {
+  const getIdCategory = (itemId) => {
+    console.log(itemId);
+    return itemId;
+  };
+
   return (
     <div className="youtube-side-bar">
       <div className="fixed">
         <h1 className="text-lg p-5">Danh mục</h1>
         <hr />
-        {YoutubeDataCategory.map((item, index) => {
-          return (
-            <ul className="ml-5">
-              <li onClick={getIdCategory}>
-                <button id="button" value={item.id}>
+        <ul className="ml-5">
+          {YoutubeDataCategory.map((item, index) => {
+            return (
+              <li>
+                <a onClick={(itemId) => getIdCategory(item.id)}>
                   {item.category}
-                  {console.log(item.id)}
-                </button>
+                </a>
               </li>
-            </ul>
-          );
-        })}
+            );
+          })}
+        </ul>
       </div>
     </div>
   );
-};
-
-const getIdCategory = () => {
-  console.log(document.getElementById("button").getAttribute("value"));
 };
 
 export default YoutubeSideBar;

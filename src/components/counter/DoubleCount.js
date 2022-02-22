@@ -9,8 +9,8 @@ const DoubleCount = (props) => {
   return (
     <div>
     {props.children}
-      <button onClick={handleDoubleNumber}>Double counter</button>
-      <span className="count">{count}</span>
+      <button onClick={handleDoubleNumber}>Double counter is</button>
+      <span className="count"> {count}</span>
     </div>
   );
 };

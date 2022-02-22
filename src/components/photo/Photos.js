@@ -12,7 +12,7 @@ const getRandomPhotos = async (page) => {
   }
 };
 
-const Photo = () => {
+const Photos = () => {
   const [randomPhotos, setRandomPhotos] = useState([]);
   const [nextPage, setNextPage] = useState(1);
 
@@ -53,4 +53,4 @@ const Photo = () => {
   );
 };
 
-export default Photo;
+export default Photos;
