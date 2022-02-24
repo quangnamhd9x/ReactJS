@@ -3,7 +3,7 @@ import React from 'react';
 const NoPage = () => {
     return (
         <div>
-            <h1>404</h1>
+            <img className="mx-auto mt-8" src="https://media.bkns.vn/uploads/2020/01/loi-404-not-found-wordpress-la-gi.jpg" alt="" />
         </div>
     );
 };

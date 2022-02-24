@@ -18,8 +18,9 @@ import Game from "./components/tictactoe/Game";
 import Toggle from "./components/toggle/Toggle";
 import CardTailwind from "./components/card/CardTailwind";
 import DoubleCount from "./components/counter/DoubleCount";
+import AppPhoto from "./components/photo/AppPhoto";
 
-export default function App() {
+function App() {
   return (
     <BrowserRouter>
       <Routes>
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="toggle" element={<Toggle />} />
           <Route path="card" element={<CardTailwind />} />
           <Route path="counter" element={<DoubleCount />} />
+          <Route path="appphoto" element={<AppPhoto />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
@@ -39,4 +41,4 @@ export default function App() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+export default App;

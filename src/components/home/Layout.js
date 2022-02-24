@@ -1,15 +1,19 @@
-import React from 'react';
+import React from "react";
 import { Outlet, Link } from "react-router-dom";
+import "./../../App.css"
 const Layout = () => {
-    return (
-        <>
+  return (
+    <>
       <nav className="p-3 bg-white shadow-md rounded-lg">
-        <ul className='flex justify-around'>
+        <ul className="flex justify-around">
           <li>
             <Link to="/">Trang chủ</Link>
           </li>
           <li>
             <Link to="/youtube">Youtube</Link>
+          </li>
+          <li>
+            <Link to="/appphoto">App Photo</Link>
           </li>
           <li>
             <Link to="/photo">Photo</Link>
@@ -34,7 +38,7 @@ const Layout = () => {
 
       <Outlet />
     </>
-    );
+  );
 };
 
 export default Layout;

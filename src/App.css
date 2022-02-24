@@ -91,13 +91,11 @@ img {
 .list-user {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center
-
+  justify-content: center;
 }
 
 .pagin {
   display: flex;
-  
 }
 
 #app {
@@ -142,7 +140,8 @@ img {
   background: #d2d2d280;
 }
 
-.table td, th {
+.table td,
+th {
   padding: 10px 7px;
 }
 
@@ -158,4 +157,62 @@ img {
 .pagination {
   display: flex;
   justify-content: center;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+ul.flex > li:hover {
+  font-weight: 500;
+  background-color: #61dafb;
+
+  padding: 8px;
+  transition: all 0.2s linear;
+  font-size: large;
+}
+
+ul.flex > li {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+ul.flex > li:first-child {
+  background-color: #0d8ef1;
+  color: aliceblue;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
