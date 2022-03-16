@@ -3,11 +3,10 @@ import React from "react";
 const YoutubeItem = (props) => {
   return (
     <div>
-      <div><i>Danh mục:</i><h2>{props.category}</h2></div>
+      <p className="para">{props.number}</p>
       <div className={`youtube-item ${props.className}`}>
         <div className="youtube-image">
           <img src={props.image || "not found image"} alt="" />
-          <p className="para">{props.number}</p>
         </div>
         <div className="youtube-footer">
           <img

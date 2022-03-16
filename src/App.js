@@ -19,6 +19,7 @@ import Toggle from "./components/toggle/Toggle";
 import CardTailwind from "./components/card/CardTailwind";
 import DoubleCount from "./components/counter/DoubleCount";
 import AppPhoto from "./components/photo/AppPhoto";
+import PhotosLightBox from "./components/photo/PhotosLightBox";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="card" element={<CardTailwind />} />
           <Route path="counter" element={<DoubleCount />} />
           <Route path="appphoto" element={<AppPhoto />} />
+          <Route path="lightbox" element={<PhotosLightBox />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

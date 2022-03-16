@@ -52,6 +52,7 @@ const Photos = () => {
                 className="w-full h-full object-cover rounded-lg h-[200px]"
                 onClick={(itemId) => showModal(item.id)}
               />
+              {item.id === id}
               {(() => {
                 if (item.id === id) {
                   return (
@@ -71,6 +72,7 @@ const Photos = () => {
                     </div>
                   );
                 }
+
                 return null;
               })()}
             </div>

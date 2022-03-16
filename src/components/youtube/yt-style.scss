@@ -1,19 +1,58 @@
-.youtube-main {
-    display: flex;
-}
-
 .youtube-list {
-    flex: 1 1 75%;
+  background: lavender;
+  width: 75%;
+  float: right;
 }
 
 .youtube-side-bar {
-    flex: 1 1 25%;
-    background: #212121;
-    h1, li {
-        color: aliceblue;
-    }
+  width: 25%;
+  background: #212121;
+  h1,
+  li {
+    color: aliceblue;
+  }
 }
 
 a {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.youtube-main {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+}
+
+.youtube-title {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.youtube-image img {
+  border-radius: 2px;
+}
+
+.youtube-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 100rem;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.youtube-footer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0 8px;
+}
+
+.youtube-author {
+  font-size: 10px;
+  color: #999;
+  font-weight: 300;
+}
+
+.para {
+  text-align: center;
+  color: #999;
+  font-size: 9px;
 }

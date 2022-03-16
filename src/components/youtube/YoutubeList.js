@@ -1,36 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { YoutubeData } from "./YoutubeData";
 import { YoutubeDataCategory } from "./YoutubeDataCategory";
 import YoutubeItem from "./YoutubeItem";
 
 const YoutubeList = (props) => {
-  const getIdCategory = (itemId) => {
-    // console.log(itemId);
-    return itemId;
+  const [IdFilter, setIdFilter] = useState(false);
+  const [categoryName, setCategoryName] = useState("");
+
+  const getIdFilter = (id, name) => {
+    setIdFilter((IdFilter) => id);
+    setCategoryName((categoryName) => name);
+    console.log(IdFilter);
+    console.log(categoryName);
   };
-
-  console.log(props);    // vịt trí item khi click vào
-
-  if (YoutubeData[0].category_id.includes(props)) {
-    console.log("Value found");
-  } else {
-    console.log("not found");
-  }
 
   return (
     <div className="youtube-main">
-      {props.children}
       <div className="youtube-side-bar">
         <div className="fixed">
-          <h1 className="text-lg p-5">Danh mục</h1>
+          <h1 className="text-lg p-5">Danh mục: {categoryName}</h1>
           <hr />
           <ul className="ml-5">
-            {YoutubeDataCategory.map((item, index) => {
+            {YoutubeDataCategory.map((item) => {
               return (
                 <li>
-                  <a onClick={(itemId) => YoutubeList(item.id ? item.id : 1)}>
+                  <button
+                    onClick={(itemId) => getIdFilter(item.id ? item.id : "")}
+                  >
                     {item.category}
-                  </a>
+                  </button>
                 </li>
               );
             })}
@@ -38,23 +36,40 @@ const YoutubeList = (props) => {
         </div>
       </div>
       <div className="youtube-list">
-        {/* {console.log(YoutubeData[0])} */}
-        {props.children}
-        {YoutubeData.map((item, index) => {
-          const newClass = index === 1 ? "abc" : "";
-          return (
-            <YoutubeItem
-              category={item.category}
-              key={item.id}
-              image={item.image}
-              avatar={item.avatar || item.avatar}
-              title={item.title}
-              author={item.author}
-              className={newClass}
-              number={(index += 1)}
-            ></YoutubeItem>
-          );
-        })}
+        {IdFilter !== false
+          ? YoutubeData.filter((video) => video.category_id === IdFilter).map(
+              (itemvi, index) => {
+                const newClass = index === 1 ? "abc" : "";
+                return (
+                  <YoutubeItem
+                    category={itemvi.category}
+                    key={itemvi.id}
+                    image={itemvi.image}
+                    avatar={itemvi.avatar}
+                    title={itemvi.title}
+                    author={itemvi.author}
+                    className={newClass}
+                    number={(index += 1)}
+                  ></YoutubeItem>
+                );
+              }
+            )
+          : YoutubeData.map((item, index) => {
+              const newClass = index === 1 ? "abc" : "";
+              return (
+                <YoutubeItem
+                  category={item.category}
+                  key={item.id}
+                  image={item.image}
+                  avatar={item.avatar}
+                  title={item.title}
+                  author={item.author}
+                  className={newClass}
+                  number={(index += 1)}
+                ></YoutubeItem>
+              );
+            })}
+        {}
       </div>
     </div>
   );
