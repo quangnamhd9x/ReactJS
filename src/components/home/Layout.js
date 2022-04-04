@@ -13,9 +13,6 @@ const Layout = () => {
             <Link to="/youtube">Youtube</Link>
           </li>
           <li>
-            <Link to="/appphoto">App Photo</Link>
-          </li>
-          <li>
             <Link to="/photo">Photo</Link>
           </li>
           <li>
@@ -35,6 +32,9 @@ const Layout = () => {
           </li>
           <li>
             <Link to="/counter">Counter</Link>
+          </li>
+          <li>
+            <Link to="/news">News</Link>
           </li>
         </ul>
       </nav>

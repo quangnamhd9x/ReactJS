@@ -16,10 +16,10 @@ import Layout from "./components/home/Layout";
 import Users from "./components/users/Users";
 import Game from "./components/tictactoe/Game";
 import Toggle from "./components/toggle/Toggle";
-import CardTailwind from "./components/card/CardTailwind";
+import Card from "./components/card/Card";
 import DoubleCount from "./components/counter/DoubleCount";
-import AppPhoto from "./components/photo/AppPhoto";
 import PhotosLightBox from "./components/photo/PhotosLightBox";
+import Hackernews from "./components/news/HackerNews";
 
 function App() {
   return (
@@ -32,10 +32,10 @@ function App() {
           <Route path="user" element={<Users />} />
           <Route path="game" element={<Game />} />
           <Route path="toggle" element={<Toggle />} />
-          <Route path="card" element={<CardTailwind />} />
+          <Route path="card" element={<Card />} />
           <Route path="counter" element={<DoubleCount />} />
-          <Route path="appphoto" element={<AppPhoto />} />
           <Route path="lightbox" element={<PhotosLightBox />} />
+          <Route path="news" element={<Hackernews />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
