@@ -19,7 +19,7 @@ import Toggle from "./components/toggle/Toggle";
 import Card from "./components/card/Card";
 import DoubleCount from "./components/counter/DoubleCount";
 import PhotosLightBox from "./components/photo/PhotosLightBox";
-import Hackernews from "./components/news/HackerNews";
+import HackerNews from "./components/news/HackerNews";
 
 function App() {
   return (
@@ -35,7 +35,7 @@ function App() {
           <Route path="card" element={<Card />} />
           <Route path="counter" element={<DoubleCount />} />
           <Route path="lightbox" element={<PhotosLightBox />} />
-          <Route path="news" element={<Hackernews />} />
+          <Route path="news" element={<HackerNews />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
