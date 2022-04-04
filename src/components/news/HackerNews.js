@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import lodash from "lodash";
 import { useRef, useState } from "react/cjs/react.development";
 
 const HackerNews = () => {
@@ -8,9 +9,9 @@ const HackerNews = () => {
   const handleFetchData = useRef();
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(true);
-  const handleUpdateQuery = (e) => {
+  const handleUpdateQuery = lodash.debounce((e) => {
     setQuery(e.target.value);
-  };
+  }, 500);
 
   handleFetchData.current = async () => {
     setLoading(true);
@@ -31,13 +32,18 @@ const HackerNews = () => {
 
   return (
     <div className="bg-blue-500 mx-auto mt-5 mb-5 p-5 rounded-lg shadow-md w-2/4">
-      <input
-        type="text"
-        className="border border-blue-500 mb-5 focus:border-blue-400 transition-all p-5 block w-full rounded-md"
-        placeholder="Typing your keyword..."
-        defaultValue={query}
-        onChange={handleUpdateQuery}
-      ></input>
+      <div className="flex mb-5 gap-x-5">
+        <input
+          type="text"
+          className="border border-blue-500 focus:border-blue-400 transition-all p-5 block w-full rounded-md"
+          placeholder="Typing your keyword..."
+          defaultValue={query}
+          onChange={handleUpdateQuery}
+        ></input>
+        <button className="bg-white text-blue-500 font-semibold p-5 rounded-md flex-shrink-0">
+          Fetching
+        </button>
+      </div>
       {loading && (
         <div className="mx-auto loading w-8 h-8 rounded-full border-white border-4 border-r-4 border-r-transparent animate-spin"></div>
       )}
