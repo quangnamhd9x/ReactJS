@@ -20,6 +20,7 @@ import Card from "./components/card/Card";
 import DoubleCount from "./components/counter/DoubleCount";
 import PhotosLightBox from "./components/photo/PhotosLightBox";
 import HackerNews from "./components/news/HackerNews";
+import HackerNewsWithReducer from "./components/news/HackerNewsWithReducer";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="counter" element={<DoubleCount />} />
           <Route path="lightbox" element={<PhotosLightBox />} />
           <Route path="news" element={<HackerNews />} />
+          <Route path="newsreducer" element={<HackerNewsWithReducer />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
