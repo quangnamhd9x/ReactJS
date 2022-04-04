@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import lodash from "lodash";
+// import lodash from "lodash";
 import { useRef, useState } from "react/cjs/react.development";
 
 const HackerNews = () => {
@@ -9,16 +9,17 @@ const HackerNews = () => {
   const handleFetchData = useRef();
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(true);
-  const handleUpdateQuery = lodash.debounce((e) => {
-    setQuery(e.target.value);
-  }, 500);
+  const [url, setUrl] = useState(
+    "https://hn.algolia.com/api/v1/search?query=''"
+  );
+  // const handleUpdateQuery = lodash.debounce((e) => {
+  //   setQuery(e.target.value);
+  // }, 500);
 
   handleFetchData.current = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(
-        `https://hn.algolia.com/api/v1/search?query=${query}`
-      );
+      const response = await axios.get(url);
       setHits(response.data?.hits || []);
       setLoading(false);
     } catch (error) {
@@ -28,7 +29,7 @@ const HackerNews = () => {
   };
   React.useEffect(() => {
     handleFetchData.current();
-  }, [query]);
+  }, [url]);
 
   return (
     <div className="bg-blue-500 mx-auto mt-5 mb-5 p-5 rounded-lg shadow-md w-2/4">
@@ -38,9 +39,14 @@ const HackerNews = () => {
           className="border border-blue-500 focus:border-blue-400 transition-all p-5 block w-full rounded-md"
           placeholder="Typing your keyword..."
           defaultValue={query}
-          onChange={handleUpdateQuery}
+          onChange={(e) => setQuery(e.target.value)}
         ></input>
-        <button className="bg-white text-blue-500 font-semibold p-5 rounded-md flex-shrink-0">
+        <button
+          onClick={() =>
+            setUrl(`https://hn.algolia.com/api/v1/search?query=${query}`)
+          }
+          className="bg-white text-blue-500 font-semibold p-5 rounded-md flex-shrink-0"
+        >
           Fetching
         </button>
       </div>
@@ -53,11 +59,14 @@ const HackerNews = () => {
       <div className="flex flex-wrap gap-5">
         {!loading &&
           hits.length > 0 &&
-          hits.map((item, index) => (
-            <h3 className="p-3 bg-gray-100 rounded-md" key={item.title}>
-              {item.title}
-            </h3>
-          ))}
+          hits.map((item, index) => {
+            if (!item.title || item.title.length <= 0) return null;
+            return (
+              <h3 className="p-3 bg-gray-100 rounded-md" key={item.title}>
+                {item.title}
+              </h3>
+            );
+          })}
       </div>
     </div>
   );
