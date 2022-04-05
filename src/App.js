@@ -21,6 +21,7 @@ import DoubleCount from "./components/counter/DoubleCount";
 import PhotosLightBox from "./components/photo/PhotosLightBox";
 import HackerNews from "./components/news/HackerNews";
 import HackerNewsWithReducer from "./components/news/HackerNewsWithReducer";
+import TodoApp from "./components/todo/TodoApp";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="lightbox" element={<PhotosLightBox />} />
           <Route path="news" element={<HackerNews />} />
           <Route path="newsreducer" element={<HackerNewsWithReducer />} />
+          <Route path="todo" element={<TodoApp />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

@@ -39,6 +39,9 @@ const Layout = () => {
           <li>
             <Link to="/newsreducer">NewsWithReducer</Link>
           </li>
+          <li>
+            <Link to="/todo">Todo</Link>
+          </li>
         </ul>
       </nav>
 
