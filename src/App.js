@@ -25,6 +25,7 @@ import TodoApp from "./components/todo/TodoApp";
 import Ref from "./components/ref/Ref";
 import Timer from "./components/ref/Timer";
 import Input from "./components/ref/Input";
+import TextareaAutoresize from "./components/ref/TextareaAutoResize";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path="ref" element={<Ref />} />
           <Route path="time" element={<Timer />} />
           <Route path="input" element={<Input />} />
+          <Route path="textarea" element={<TextareaAutoresize />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
