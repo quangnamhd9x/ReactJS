@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  </head>
+  <style>
+    .dis-input {
+      display: none;
+    }
+  </style>
+  <body>
+    <input type="text" id="name" name="fname" value="John" /><br />
+    <input type="text" id="address" name="lname" value="Doe" /><br />
+    <button onclick="return postToGoogle()">ADD</button>
+    <p id="url"></p>
+    <script>
+      function postToGoogle() {
+        var url =
+          "https://script.google.com/macros/s/AKfycbw0FOlSdHr5Rq7iadR0u2Fwvo-CEHT157zWQE04cawUmL3Qb9BWW-3fxyPXLt2PEq-3/exec?utm_source=insider&utm_medium=onpage&utm_campaign=LHTS";
+        let name = $("#name").val();
+        let address = $("#address").val();
+        let urlString = url;
+        let paramString = urlString.split("?")[1];
+        let queryString = new URLSearchParams(paramString);
+        let obj = {};
+        let request = {
+          name: name,
+          address: address,
+        };
+        for (let pair of queryString.entries()) {
+          console.log("day la pair: " + pair);
+          console.log("Key is: " + pair[0]);
+          console.log("Value is: " + pair[1]);
+          obj[pair[0]] = pair[1];
+        }
+
+        let data = { ...request, ...obj };
+        console.log(data);
+
+        $.ajax({
+          url: url,
+          method: "GET",
+          dataType: "json",
+          data: data,
+        });
+      }
+    </script>
+  </body>
+</html>

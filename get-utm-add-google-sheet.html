@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <form action="/action_page.php">
+      <input type="text" id="fname" name="fname" value="John" /><br />
+      <input type="text" id="lname" name="lname" value="Doe" /><br />
+      <input type="hidden" value="" name="utm_source" id="utm_source" />
+      <input type="hidden" value="" name="utm_medium" id="utm_medium" />
+      <input type="hidden" value="" name="utm_campaign" id="utm_campaign" />
+      <input type="submit" value="Submit" />
+    </form>
+    <p id="url"></p>
+    <script>
+      var url = window.location.href;
+      document.getElementById("url").innerHTML = url;
+      let obj = {};
+      let urlString = url;
+      let paramString = urlString.split("?")[1];
+      let queryString = new URLSearchParams(paramString);
+      for (let pair of queryString.entries()) {
+        console.log("day la pair: " + pair);
+        console.log("Key is: " + pair[0]);
+        console.log("Value is: " + pair[1]);
+        obj[pair[0]] = pair[1];
+      }
+      console.log(obj);
+      document.getElementById("utm_source").value = obj["utm_source"];
+      document.getElementById("utm_medium").value = obj["utm_medium"];
+      document.getElementById("utm_campaign").value = obj["utm_campaign"];
+    </script>
+  </body>
+</html>

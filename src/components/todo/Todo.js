@@ -50,4 +50,5 @@ const Todo = ({ todo, onCheckBtnClick }) => {
   );
 };
 
+
 export default Todo;

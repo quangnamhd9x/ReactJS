@@ -3,7 +3,7 @@ import Textfield from "@atlaskit/textfield";
 import Button from "@atlaskit/button";
 import TodoList from "./TodoList";
 import { useCallback, useEffect, useState } from "react/cjs/react.development";
-import { v4 } from "uuid"; //tao mot id duy nhat
+import { v4 } from "uuid";
 
 function TodoApp() {
   const [todoList, setTodoList] = useState([]);
