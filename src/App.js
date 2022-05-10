@@ -26,6 +26,7 @@ import Ref from "./components/ref/Ref";
 import Timer from "./components/ref/Timer";
 import Input from "./components/ref/Input";
 import TextareaAutoresize from "./components/ref/TextareaAutoResize";
+import Dropdown from "./components/ref/Dropdown";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           <Route path="time" element={<Timer />} />
           <Route path="input" element={<Input />} />
           <Route path="textarea" element={<TextareaAutoresize />} />
+          <Route path="dropdown" element={<Dropdown />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
