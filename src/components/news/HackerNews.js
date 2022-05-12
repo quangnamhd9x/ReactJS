@@ -1,6 +1,5 @@
 import axios from "axios";
 import React from "react";
-// import lodash from "lodash";
 import { useRef, useState } from "react/cjs/react.development";
 
 const HackerNews = () => {
