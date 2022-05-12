@@ -16,9 +16,6 @@ const Layout = () => {
             <Link to="/photo">Photo</Link>
           </li>
           <li>
-            <Link to="/lightbox">Photo LightBox</Link>
-          </li>
-          <li>
             <Link to="/user">User</Link>
           </li>
           <li>
